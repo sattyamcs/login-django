@@ -1,0 +1,46 @@
+<h1> Newuser Registration page</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Email</td>
+            <td><input type="Email" placeholder="enter Email" name="Email" required></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" placeholder="enter password" name="Pwd" required></td>
+        </tr>
+        <tr>
+            <td>First name</td>
+            <td><input type="text" placeholder="enter firstname" name="Firstname" required></td>
+        </tr>
+        <tr>
+            <td>Last name</td>
+            <td><input type="text" placeholder="enter lastname" name="Lastname" required></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="phone2numeric" placeholder="enter phone" name="Phone" required></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" placeholder="enter address" name="Address" required></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input type="radio" value="M" name="Gender"> Male |
+                <input type="radio" value="F" name="Gender">Female
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Registration</button></td>
+        </tr>
+    </table>
+    {% if messages %}
+    {% for msg in messages %}
+    <b>{{msg}}</b>
+    {% endfor %}
+    {% endif %}
+    <em>If you already a member<a href="{% url 'loginpage' %}">Login</a> </em>
+</form>

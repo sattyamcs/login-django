@@ -1,0 +1,27 @@
+<h1>Login page</h1>
+<form method="POST">
+{% csrf_token %}
+    <table >
+        <tr>
+            <td>
+                user name
+            </td>
+            <td><input type="text" placeholder="enter user name " name="Email" required></td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td><input type="Password" placeholder="enter Password " name="Pwd" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <button type="submit">Login</button></td>
+        </tr>
+    </table>
+    {% if messages %}
+    {% for msg in messages %}
+    <b>{{msg}}</b>
+    {% endfor %}
+    {% endif %}
+</form>
